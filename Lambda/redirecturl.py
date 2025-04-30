@@ -3,7 +3,7 @@ import boto3
 
 def lambda_handler(event, context):
     s3 = boto3.client('s3')
-    bucket_name = 'syed-url-shortener'  # ✅ your actual bucket name
+    bucket_name = 'syed-url-shortener'  
 
     try:
         short_code = event['pathParameters']['shortcode']
