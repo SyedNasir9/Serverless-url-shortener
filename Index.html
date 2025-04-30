@@ -1,40 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>URL Shortener</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 50px;
-            background-color: #f9f9f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #fff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
         h1 {
-            color: #444;
+            color: #333;
+            margin-bottom: 24px;
         }
+
         input[type="text"] {
-            width: 300px;
-            padding: 8px;
-            margin-right: 10px;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
         }
+
         button {
-            padding: 8px 16px;
+            padding: 12px 24px;
             background-color: #28a745;
             color: white;
             border: none;
+            border-radius: 8px;
+            font-size: 16px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
+
+        button:hover {
+            background-color: #218838;
+        }
+
         #result {
             margin-top: 20px;
-            font-weight: bold;
+            font-weight: 500;
+            color: #444;
+        }
+
+        #result a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        #result a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h1>URL Shortener</h1>
-    <input type="text" id="url" placeholder="Enter long URL">
-    <button onclick="shortenUrl()">Shorten</button>
-
-    <p id="result"></p>
+    <div class="container">
+        <h1>URL Shortener</h1>
+        <input type="text" id="url" placeholder="Enter long URL">
+        <button onclick="shortenUrl()">Shorten</button>
+        <p id="result"></p>
+    </div>
 
     <script>
         async function shortenUrl() {
